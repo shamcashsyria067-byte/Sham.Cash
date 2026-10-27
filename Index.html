@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق المحفظة</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#0e1225',
+                        bgCardDark: '#1a1f38',
+                        cardGradientStart: '#4a82f6',
+                        cardGradientEnd: '#2b52cc',
+                        inputBg: '#212640',
+                        accentBlue: '#5773ff',
+                        accentHover: '#4662ea',
+                        textMuted: '#8f97b0',
+                        textLink: '#6384ff',
+                        pinkBtn: '#ff4d6d',
+                        cyanGlow: '#4cc9f0',
+                        greenPositive: '#38ef7d',
+                        redNegative: '#ff4b5c'
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0e1225;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e1225;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #212640;
+            border-radius: 4px;
+        }
+
+        /* Card Soft Glow */
+        .wallet-card {
+            background: linear-gradient(135deg, rgba(74, 130, 246, 0.45) 0%, rgba(37, 75, 196, 0.45) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .quick-btn-glow {
+            box-shadow: 0 0 15px rgba(76, 201, 240, 0.5);
+        }
+
+        /* Smooth Screen Transitions */
+        .screen {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .screen-hidden {
+            display: none !important;
+            opacity: 0;
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body class="bg-bgDark min-h-screen flex items-center justify-center p-0 md:p-4 select-none">
+
+    <!-- Container Mockup wrapper -->
+    <div class="w-full max-w-md bg-bgDark min-h-screen md:min-h-[840px] md:max-h-[920px] md:rounded
